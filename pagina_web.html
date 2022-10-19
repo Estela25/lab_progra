@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Convirtiendo de Fahrenheit a kelvin</title>
+    <style>
+       
+        #Fahrenheit {
+            margin: 10px;
+            width: 300px;
+            height: 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: .5px solid black;
+        }
+        #convirtiendo {
+            font-size: 10px;
+            margin: 10px;
+            background-color: blue;
+            width: 90px;
+            height: 20px;
+          
+            text-decoration: none;
+            border: none;
+            border-radius: 26px;
+            color: black;
+        }
+        #convirtiendo:hover {
+            background-color: black;
+        }
+        #convirtiendo:active {
+            background-color: white;
+        }
+        #resultado {
+            margin: 100px auto;
+            padding: 5px;
+            border-radius: 5px;
+            width: 300px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #convirtiendo {
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            border: solid 1px purple;
+            border-top: 20px solid red;
+            font-family: serif;
+            font-size: 1em;
+            width: 500px;
+            min-height: 200px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="conversorfk">
+        <h1>Conversor de Fahrenheit a kelvin</h1>
+        <input type="number" name="Fahrenheit" id="Fahrenheit"><br>
+        <button id="convertir">Convertir</button>
+
+        <p>Prediccion:</p>
+        <div id="resultado"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', e=>{
+            
+        });
+        $(document).ready(e => {
+            let f = $('#Fahrenheit')[0],
+                convertir = $('#convertir')[0];
+
+            convertir.onclick = e => {
+                $.post("http://localhost:3004", f.value, respuesta => {
+                    $('#resultado').text(respuesta);
+                    $('#resultado').css('background-color', 'black')
+                });
+            }
+        });
+    </script>
+</body>
+</html>
