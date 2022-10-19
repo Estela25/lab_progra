@@ -25,7 +25,7 @@
             text-decoration: none;
             border: none;
             border-radius: 26px;
-            color: black;
+            color: white;
         }
         #convirtiendo:hover {
             background-color: black;
@@ -39,10 +39,10 @@
             border-radius: 5px;
             width: 300px;
             background-color: black;
-            color: white;
+            color: blue;
             text-align: center;
         }
-        #convirtiendo {
+        #conversorfk {
             margin: auto;
             text-align: center;
             padding: 20px;
@@ -60,7 +60,7 @@
     <div id="conversorfk">
         <h1>Conversor de Fahrenheit a kelvin</h1>
         <input type="number" name="Fahrenheit" id="Fahrenheit"><br>
-        <button id="convertir">Convertir</button>
+        <button id="convirtiendo">Convertir</button>
 
         <p>Prediccion:</p>
         <div id="resultado"></div>
@@ -73,13 +73,15 @@
         });
         $(document).ready(e => {
             let f = $('#Fahrenheit')[0],
-                convertir = $('#convertir')[0];
+                Convertir = $('#convirtiendo')[0];
 
-            convertir.onclick = e => {
+            Convertir.onclick = e => {
+                console.log(f.value);
                 $.post("http://localhost:3004", f.value, respuesta => {
                     $('#resultado').text(respuesta);
                     $('#resultado').css('background-color', 'black')
                 });
+                
             }
         });
     </script>

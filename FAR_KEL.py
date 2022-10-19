@@ -22,7 +22,7 @@ modelo_f_k.compile(optimizer=tf.keras.optimizers.Adam(1),loss='mean_squared_erro
 hisotiral_f_k = modelo_f_k.fit(f,k, epochs=150, verbose=0)
 
 #conversor
-k= modelo_f_k.predict([86])
-print("Conversion de Farehrenheit a kelvin: ",k)
+f= modelo_f_k.predict([86])
+print("Conversion de Farehrenheit a kelvin: ",f)
 
 

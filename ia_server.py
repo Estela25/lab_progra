@@ -24,11 +24,11 @@ modelo_f_k.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
 #compliar modelo
 modelo_f_k.compile(optimizer=tf.keras.optimizers.Adam(1),loss='mean_squared_error')
 
-hisotiral_f_k = modelo_f_k.fit(f,k, epochs=1000, verbose=0)
+hisotiral_f_k = modelo_f_k.fit(f,k, epochs=500, verbose=0)
 
 #conversor
-k= modelo_f_k.predict([10])
-print("Conversion de Farehrenheit a kelvin: ",k)
+f= modelo_f_k.predict([10])
+print("Conversion de Farehrenheit a kelvin: ",f)
 
 #servidor en Python
 class servidorBasico(BaseHTTPRequestHandler):
